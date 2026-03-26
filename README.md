@@ -7,6 +7,7 @@ A monorepo of small **SwiftUI** sample apps—each folder is a standalone Xcode 
 | Project | Description |
 | -------- | ----------- |
 | [**WeSplit**](WeSplit/) | Bill splitter: check amount, party size, tip %, total and per-person share with locale-aware currency. |
+| [**Unit-Converter**](Unit-Converter/) | Multi-category unit converter (temperature, length, time, volume) in a single form-based SwiftUI screen. |
 
 ## Repository layout
 
@@ -14,8 +15,11 @@ A monorepo of small **SwiftUI** sample apps—each folder is a standalone Xcode 
 SwiftUI-Demo-Projects/
 ├── README.md                 ← You are here
 ├── WeSplit/
-│   ├── README.md             ← Project-specific notes
+│   ├── README.md
 │   └── WeSplit.xcodeproj
+├── Unit-Converter/
+│   ├── README.md
+│   └── Unit-Converter.xcodeproj
 └── …                         ← More demos added over time
 ```
 
