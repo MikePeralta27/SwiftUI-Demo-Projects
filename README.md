@@ -8,6 +8,7 @@ A monorepo of small **SwiftUI** sample apps—each folder is a standalone Xcode 
 | -------- | ----------- |
 | [**WeSplit**](WeSplit/) | Bill splitter: check amount, party size, tip %, total and per-person share with locale-aware currency. |
 | [**Unit-Converter**](Unit-Converter/) | Multi-category unit converter (temperature, length, time, volume) in a single form-based SwiftUI screen. |
+| [**GuessTheFlag**](GuessTheFlag/) | Flag quiz: pick the correct flag for the named country; score, alerts, and shuffled rounds. |
 
 ## Repository layout
 
@@ -20,6 +21,9 @@ SwiftUI-Demo-Projects/
 ├── Unit-Converter/
 │   ├── README.md
 │   └── Unit-Converter.xcodeproj
+├── GuessTheFlag/
+│   ├── README.md
+│   └── GuessTheFlag.xcodeproj
 └── …                         ← More demos added over time
 ```
 
