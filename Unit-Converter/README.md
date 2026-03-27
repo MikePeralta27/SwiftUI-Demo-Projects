@@ -9,7 +9,8 @@ A small **SwiftUI** demo app that converts values across **temperature**, **leng
 
 ## Demo video
 
-Add a screen recording or hosted link when you have one.
+https://github.com/user-attachments/assets/1cff1314-3e32-4b20-a233-45d80f561774
+
 
 | Option | What to do |
 |--------|------------|
