@@ -18,7 +18,7 @@ struct ContentView: View {
 
     var totalPerPerson: Double {
         // Calculate the total per person here
-        let peopleCount = Double(numberOfPeople + 2)
+        let peopleCount = Double(numberOfPeople)
         let amountPerPerson = grandTotal / max(peopleCount, 1)
         return amountPerPerson
     }
@@ -43,8 +43,9 @@ struct ContentView: View {
                     .keyboardType(.decimalPad)
                     .focused($amountIsFocused)
                     Picker("Number of people", selection: $numberOfPeople) {
-                        ForEach(2..<100) {
+                        ForEach(2..<100, id: \.self) {
                             Text("\($0) people")
+                                
                         }
                     }
                 }
@@ -53,9 +54,11 @@ struct ContentView: View {
                     Picker("Tip Percentage", selection: $tipPercentage) {
                         ForEach(tipPercentages, id: \.self) {
                             Text($0, format: .percent)
+                                
                         }
                     }
                     .pickerStyle(.segmented)
+                                        
                     Text(checkAmount / 100 * Double(tipPercentage),
                          format: .currency(
                              code: Locale.current.currency?.identifier ?? "USD"
@@ -69,6 +72,8 @@ struct ContentView: View {
                             code: Locale.current.currency?.identifier ?? "USD"
                         )
                     )
+                    .foregroundStyle(tipPercentage == 0 ? .red : .primary)
+
                 }
 
                 Section("Amount per person") {
