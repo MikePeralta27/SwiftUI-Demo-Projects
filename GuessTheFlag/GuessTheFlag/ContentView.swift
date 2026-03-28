@@ -19,6 +19,25 @@ struct ContentView: View {
     @State private var showingScore = false
     @State private var scoreTitle = ""
     @State private var scoreCount = 0
+    @State private var questionCount = 1
+
+    private let totalRounds = 8
+
+    var alertTitle: String {
+        if questionCount == totalRounds {
+            "Game over!"
+        } else {
+            scoreTitle
+        }
+    }
+
+    var alertMessage: String {
+        if questionCount == totalRounds {
+            "You scored \(scoreCount) out of \(totalRounds)."
+        } else {
+            "Your score so far: \(scoreCount) (round \(questionCount) of \(totalRounds))."
+        }
+    }
 
     var body: some View {
 
@@ -79,10 +98,18 @@ struct ContentView: View {
             }  // VStack 1
             .padding()
         }  // ZStack
-        .alert(scoreTitle, isPresented: $showingScore) {
-            Button("Continue", action: askQuestion)
+        .alert(alertTitle, isPresented: $showingScore) {
+            if questionCount == totalRounds {
+                Button("Play Again") {
+                    scoreCount = 0
+                    questionCount = 0
+                    askQuestion()
+                }
+            } else {
+                Button("Continue", action: askQuestion)
+            }
         } message: {
-            Text("Your total score is \(scoreCount).")
+            Text(alertMessage)
         }
     }
 
@@ -100,6 +127,7 @@ struct ContentView: View {
     func askQuestion() {
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
+        questionCount += 1
     }
 }
 
