@@ -21,3 +21,9 @@ A **SwiftUI** quiz game in the style of *100 Days of SwiftUI* / Paul Hudson’s 
 ## Requirements
 
 - **Xcode 15+** recommended; deployment target as set in the Xcode project.
+
+
+
+
+https://github.com/user-attachments/assets/343ae814-ff93-497b-8aee-a149efb95f91
+
