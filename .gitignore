@@ -8,6 +8,13 @@ DerivedData/
 *.xcscmblueprint
 xcuserdata/
 
+# Local / WIP demos not tracked in this repo (see PR scope)
+ViewsAndModifiers/
+
+# Create ML training bundle + duplicate model next to the app (app uses BetterRest/BetterRest/SleepCalculator.mlmodel)
+BetterRest/BetterRest.mlproj/
+BetterRest/BetterRest.mlmodel
+
 # Swift Package Manager
 .swiftpm/
 .build/
