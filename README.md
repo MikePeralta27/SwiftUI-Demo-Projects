@@ -10,6 +10,7 @@ A monorepo of small **SwiftUI** sample apps—each folder is a standalone Xcode 
 | [**Unit-Converter**](Unit-Converter/) | Multi-category unit converter (temperature, length, time, volume) in a single form-based SwiftUI screen. |
 | [**GuessTheFlag**](GuessTheFlag/) | Flag quiz: pick the correct flag for the named country; score, alerts, and shuffled rounds. |
 | [**RockPaperAndScissors**](RockPaperAndScissors/) | RPS challenge: random opponent and win/lose/tie goal; 10 rounds, score, alerts, restart. |
+| [**BetterRest**](BetterRest/) | Sleep helper: Core ML predicts sleep from wake time, sleep goal, and coffee; live-updating recommended bedtime. |
 
 ## Repository layout
 
@@ -28,6 +29,9 @@ SwiftUI-Demo-Projects/
 ├── RockPaperAndScissors/
 │   ├── README.md
 │   └── RockPaperAndScissors.xcodeproj
+├── BetterRest/
+│   ├── README.md
+│   └── BetterRest.xcodeproj
 └── …                         ← More demos added over time
 ```
 
