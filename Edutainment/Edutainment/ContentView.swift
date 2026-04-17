@@ -69,8 +69,10 @@ struct ContentView: View {
                         .font(.largeTitle)
                         .fontWeight(.semibold)
                         .frame(maxWidth: .infinity, alignment: .center)
-                        .animation(.bouncy, value: questionAnimationTrigger)
+                        .id(questionAnimationTrigger)
                     
+                        .animation(.bouncy, value: questionAnimationTrigger)
+
                 }
 
                 Section("Answer") {
@@ -88,6 +90,8 @@ struct ContentView: View {
                         Text(result.title)
                             .font(.largeTitle)
                             .fontWeight(.semibold)
+                            .id(resultAnimationTrigger)
+                            .transition(.scale.combined(with: .opacity))
                             .animation(.bouncy, value: resultAnimationTrigger)
 
                         Text("Score: \(score) / \(selectedQuestionAmount)")
@@ -108,7 +112,6 @@ struct ContentView: View {
             }
             .alert("Game Over!", isPresented: $showAlert) {
                 Button("New Game") {
-
                     resetGame()
                 }
 
@@ -129,13 +132,17 @@ struct ContentView: View {
             selectedQuestion = ""
             return
         }
-        for _ in 1...QuestionAmount {
+        while newQuestions.count < QuestionAmount {
             let value = Int.random(in: 1...12)
             let answer = tableNumber * value
             let key = "\(tableNumber) x \(value)"
-            newQuestions[key] = String(answer)
+            // Only insert if it's not already present to guarantee uniqueness
+            if newQuestions[key] == nil {
+                newQuestions[key] = String(answer)
+            }
         }
         questions = newQuestions
+        presentedQuestionCount = 0
         if let firstKey = newQuestions.keys.randomElement() {
             withAnimation(.bouncy) {
                 selectedQuestion = "  " + firstKey
@@ -148,31 +155,34 @@ struct ContentView: View {
         if answer.isEmpty { return }
 
         presentedQuestionCount += 1
-        
-        if presentedQuestionCount > questions.count {
-            showAlert.toggle()
-        }
+
         // Extract the key without the leading spaces we added when displaying
         let key = selectedQuestion.trimmingCharacters(in: .whitespaces)
         guard let correct = questions[key] else { return }
         if correct == answer {
             result = .correct
+            score += 1
         } else {
             result = .wrong
         }
+        
         withAnimation(.bouncy) {
             resultAnimationTrigger += 1
         }
 
-        // pick a new random question
-        if let nextKey = questions.keys.randomElement() {
-            withAnimation(.bouncy) {
-                selectedQuestion = "  " + nextKey
-                questionAnimationTrigger += 1
+        // If we've reached the target number of questions, end the game
+        if presentedQuestionCount >= selectedQuestionAmount {
+            showAlert = true
+        } else {
+            // Otherwise, pick the next question from the remaining pool
+            if let nextKey = questions.keys.randomElement() {
+                withAnimation(.bouncy) {
+                    selectedQuestion = "  " + nextKey
+                    questionAnimationTrigger += 1
+                }
             }
         }
 
-        
     }
 
     func resetGame() {
