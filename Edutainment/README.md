@@ -2,7 +2,9 @@
 
 A SwiftUI **multiplication practice** game: choose a **times table** (2–12), how many questions you want (5, 10, 15, or 20), then answer prompts like `7 x 3`. The app shows **Correct** / **Wrong** feedback with light animation, tracks your **score**, and ends the round with a **Game Over** alert and **New Game** reset.
 
-Uses `NavigationStack`, `Form`, `Stepper`, `Picker`, and a decimal-pad `TextField` with `onSubmit` to check answers against a generated question set.
+Questions are generated so each prompt in a round is **unique** (no duplicate `table × multiplier` pairs). The round ends after you submit answers for the number of questions you picked; wrong answers still advance the round so the score reflects how many were correct.
+
+Uses `NavigationStack`, `Form`, `Stepper`, `Picker`, and a decimal-pad `TextField` with `onSubmit` to check answers against a generated question set. Question and result labels use `.id` plus `.animation(.bouncy, …)` so feedback animates on every submit.
 
 ## Requirements
 
