@@ -42,6 +42,48 @@ struct MissionCardView: View {
 
 }
 
+struct GridLayout: View {
+    let missions: [Mission]
+    let astronauts: [String: Astronaut]
+    let columns = [
+        GridItem(.adaptive(minimum: 150))
+    ]
+    var body: some View {
+        LazyVGrid(columns: columns) {
+            ForEach(missions) { mission in
+                NavigationLink {
+                    MissionView(
+                        mission: mission,
+                        astronauts: astronauts
+                    )
+                } label: {
+                    MissionCardView(mission: mission)
+                }
+            }
+        }
+    }
+}
+
+struct ListLayout: View {
+    let missions: [Mission]
+    let astronauts: [String: Astronaut]
+
+    var body: some View {
+        LazyVStack {
+            ForEach(missions) { mission in
+                NavigationLink {
+                    MissionView(
+                        mission: mission,
+                        astronauts: astronauts
+                    )
+                } label: {
+                    MissionCardView(mission: mission)
+                }
+            }
+        }
+    }
+}
+
 struct MissionsListView: View {
     @State private var isGrid: Bool = true
     let missions: [Mission]
@@ -74,17 +116,28 @@ struct ContentView: View {
         NavigationStack {
             ScrollView {
                 if isGrid {
-                    LazyVGrid(columns: columns) {
-                        MissionsListView(missions: missions, astronauts: astronauts)
-                        
-                    }
+
+                    GridLayout(
+                        missions: missions,
+                        astronauts: astronauts
+                    )
                     .padding([.horizontal, .bottom])
+
                 } else {
-                    LazyVStack {
-                        MissionsListView(missions: missions, astronauts: astronauts)
-                    }
-                    .padding([.horizontal])
-                    .padding([.horizontal, .bottom])
+
+                    ListLayout(
+                        missions: missions,
+                        astronauts: astronauts
+                    )
+
+                    .padding(
+                        EdgeInsets(
+                            top: 0,
+                            leading: 80,
+                            bottom: 30,
+                            trailing: 80
+                        )
+                    )
                 }
             }
             .navigationTitle("Moonshot")
@@ -108,4 +161,3 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
-
