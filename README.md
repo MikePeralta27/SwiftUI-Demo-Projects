@@ -11,10 +11,10 @@ A monorepo of small **SwiftUI** sample apps—each folder is a standalone Xcode 
 | [**GuessTheFlag**](GuessTheFlag/) | Flag quiz: pick the correct flag for the named country; score, alerts, and shuffled rounds. |
 | [**RockPaperAndScissors**](RockPaperAndScissors/) | RPS challenge: random opponent and win/lose/tie goal; 10 rounds, score, alerts, restart. |
 | [**BetterRest**](BetterRest/) | Sleep helper: Core ML predicts sleep from wake time, sleep goal, and coffee; live-updating recommended bedtime. |
-| [**Edutainment**](Edutainment/) | Times-table quiz: pick table 2–12 and round length; random multiplication questions, score, and new game. |
-| [**iExpense**](iExpense/) | Expense log: personal, business, and other categories; color-coded amounts, swipe-to-delete, and JSON persistence in UserDefaults. |
 | [**Edutainment**](Edutainment/) | Times-table quiz: pick table 2–12 and question count (5–20); unique prompts, score tracking, animated feedback, and Game Over with New Game. |
+| [**iExpense**](iExpense/) | Expense log: personal, business, and other categories; color-coded amounts, swipe-to-delete, and JSON persistence in UserDefaults. |
 | [**WordScramble**](WordScramble/) | Anagram game: form valid English words from a random root word’s letters; score, restart, and spell-check with UITextChecker. |
+| [**Moonshot**](Moonshot/) | Apollo program browser: bundled JSON for missions and astronauts, grid/list layout toggle, mission detail with crew strip and astronaut profiles. |
 
 ## Repository layout
 
@@ -45,6 +45,9 @@ SwiftUI-Demo-Projects/
 ├── WordScramble/
 │   ├── README.md
 │   └── WordScramble.xcodeproj
+├── Moonshot/
+│   ├── README.md
+│   └── Moonshot.xcodeproj
 └── …                         ← More demos added over time
 ```
 

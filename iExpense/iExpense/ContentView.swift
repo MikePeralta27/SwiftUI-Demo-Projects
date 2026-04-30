@@ -42,6 +42,12 @@ struct ContentView: View {
     @State private var expenses = Expenses()
     @State private var showingAddExpense = false
 
+    private enum Route: Hashable {
+        case add
+        // case detail(id: UUID)  // example for later
+    }
+    @State private var path: [Route] = []
+    
     @ViewBuilder
     private func styledAmount(_ amount: Double, currencyCode: String) -> some View {
         let text = Text(amount, format: .currency(code: currencyCode))
@@ -62,7 +68,7 @@ struct ContentView: View {
     }
 
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             List {
                 Section("Personal") {
                     ForEach(expenses.items.filter { $0.type == "Personal" }) { item in
@@ -110,18 +116,28 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("iExpense")
+            .navigationDestination(for: Route.self) { route in
+                switch route {
+                case .add:
+                    AddView(expenses: expenses)
+
+                }
+
+//            }
+            }
             .toolbar {
                 Button("Add Expense", systemImage: "plus") {
-                    showingAddExpense = true
-                }
+                    path.append(.add)
+                    }
+                
                 
                 EditButton()
                 
             }
-            .sheet(isPresented: $showingAddExpense) {
-                //show and Add view here
-                AddView(expenses: expenses)
-            }
+//            .sheet(isPresented: $showingAddExpense) {
+//                //show and Add view here
+//                AddView(expenses: expenses)
+//            }
         }
     }
     
