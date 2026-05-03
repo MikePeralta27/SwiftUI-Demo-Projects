@@ -15,6 +15,7 @@ A monorepo of small **SwiftUI** sample apps—each folder is a standalone Xcode 
 | [**iExpense**](iExpense/) | Expense log: personal, business, and other categories; color-coded amounts, swipe-to-delete, and JSON persistence in UserDefaults. |
 | [**WordScramble**](WordScramble/) | Anagram game: form valid English words from a random root word’s letters; score, restart, and spell-check with UITextChecker. |
 | [**Moonshot**](Moonshot/) | Apollo program browser: bundled JSON for missions and astronauts, grid/list layout toggle, mission detail with crew strip and astronaut profiles. |
+| [**habit-tracker**](habit-tracker/) | Habit list: add habits from a sheet, list with typed navigation by `UUID`, detail with completion count and JSON persistence in `UserDefaults`. |
 
 ## Repository layout
 
@@ -48,6 +49,9 @@ SwiftUI-Demo-Projects/
 ├── Moonshot/
 │   ├── README.md
 │   └── Moonshot.xcodeproj
+├── habit-tracker/
+│   ├── README.md
+│   └── habit-tracker.xcodeproj
 └── …                         ← More demos added over time
 ```
 
