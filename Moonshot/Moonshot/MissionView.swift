@@ -40,9 +40,7 @@ struct AstronautsHorizontalView: View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
                 ForEach(astronautsCrew, id: \.role) { crewMember in
-                    NavigationLink {
-                        AstronautView(astronaut: crewMember.astronaut)
-                    } label: {
+                    NavigationLink(value: crewMember.astronaut) {
                         HStack {
                             Image(crewMember.astronaut.id)
                                 .resizable()
@@ -155,6 +153,9 @@ struct MissionView: View {
         .navigationTitle(mission.displayName)
         .navigationBarTitleDisplayMode(.inline)
         .background(.lightBackground)
+        .navigationDestination(for: Astronaut.self) { astronaut in
+            AstronautView(astronaut: astronaut)
+        }
     }
 
     init(mission: Mission, astronauts: [String: Astronaut]) {

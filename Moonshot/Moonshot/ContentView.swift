@@ -44,19 +44,13 @@ struct MissionCardView: View {
 
 struct GridLayout: View {
     let missions: [Mission]
-    let astronauts: [String: Astronaut]
     let columns = [
         GridItem(.adaptive(minimum: 150))
     ]
     var body: some View {
         LazyVGrid(columns: columns) {
             ForEach(missions) { mission in
-                NavigationLink {
-                    MissionView(
-                        mission: mission,
-                        astronauts: astronauts
-                    )
-                } label: {
+                NavigationLink(value: mission) {
                     MissionCardView(mission: mission)
                 }
             }
@@ -66,17 +60,11 @@ struct GridLayout: View {
 
 struct ListLayout: View {
     let missions: [Mission]
-    let astronauts: [String: Astronaut]
 
     var body: some View {
         LazyVStack {
             ForEach(missions) { mission in
-                NavigationLink {
-                    MissionView(
-                        mission: mission,
-                        astronauts: astronauts
-                    )
-                } label: {
+                NavigationLink(value: mission) {
                     MissionCardView(mission: mission)
                 }
             }
@@ -85,18 +73,11 @@ struct ListLayout: View {
 }
 
 struct MissionsListView: View {
-    @State private var isGrid: Bool = true
     let missions: [Mission]
-    let astronauts: [String: Astronaut]
 
     var body: some View {
         ForEach(missions) { mission in
-            NavigationLink {
-                MissionView(
-                    mission: mission,
-                    astronauts: astronauts
-                )
-            } label: {
+            NavigationLink(value: mission) {
                 MissionCardView(mission: mission)
             }
         }
@@ -118,16 +99,14 @@ struct ContentView: View {
                 if isGrid {
 
                     GridLayout(
-                        missions: missions,
-                        astronauts: astronauts
+                        missions: missions
                     )
                     .padding([.horizontal, .bottom])
 
                 } else {
 
                     ListLayout(
-                        missions: missions,
-                        astronauts: astronauts
+                        missions: missions
                     )
 
                     .padding(
@@ -152,6 +131,9 @@ struct ContentView: View {
                             ? "list.dash" : "square.grid.2x2"
                     )
                 }
+            }
+            .navigationDestination(for: Mission.self) { mission in
+                MissionView(mission: mission, astronauts: astronauts)
             }
         }
 
