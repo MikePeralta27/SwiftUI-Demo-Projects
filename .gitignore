@@ -12,6 +12,9 @@ xcuserdata/
 ViewsAndModifiers/
 Animations/
 
+# Local rename backup when pulling if an untracked habit-tracker/ blocked merge
+habit-tracker-untracked-before-pull/
+
 # Create ML training bundle + duplicate model next to the app (app uses BetterRest/BetterRest/SleepCalculator.mlmodel)
 BetterRest/BetterRest.mlproj/
 BetterRest/BetterRest.mlmodel
