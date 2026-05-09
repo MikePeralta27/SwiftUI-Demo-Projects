@@ -16,7 +16,7 @@ A monorepo of small **SwiftUI** sample apps—each folder is a standalone Xcode 
 | [**WordScramble**](WordScramble/) | Anagram game: form valid English words from a random root word’s letters; score, restart, and spell-check with UITextChecker. |
 | [**Moonshot**](Moonshot/) | Apollo program browser: bundled JSON for missions and astronauts, grid/list layout toggle, mission detail with crew strip and astronaut profiles. |
 | [**habit-tracker**](habit-tracker/) | Habit list: add habits from a sheet, list with typed navigation by `UUID`, detail with completion count and JSON persistence in `UserDefaults`. |
-| [**CupcakeCorner**](CupcakeCorner/) | Networking starter: `AsyncImage` from a remote URL; commented `Codable` + `URLSession` iTunes search scaffold for the CupcakeCorner chapter. |
+| [**CupcakeCorner**](CupcakeCorner/) | Cupcake order flow: picker, stepper, special requests, delivery form with validation, JSON `UserDefaults` persistence for address, checkout with `AsyncImage`, currency total, and async POST with `Codable` `Order`. |
 
 ## Repository layout
 
