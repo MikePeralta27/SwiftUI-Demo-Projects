@@ -1,14 +1,14 @@
 # Bookworm
 
-SwiftUI **reading log** demo from **100 Days of SwiftUI**: track books with title, author, genre, written review, and star rating. Data persists with **SwiftData** (`@Model`, `@Query`, `modelContext`).
+SwiftUI **reading log** demo from **100 Days of SwiftUI**: track books with title, author, genre, written review, star rating, and **date added**. Data persists with **SwiftData** (`@Model`, `@Query`, `modelContext`).
 
 ## Features
 
-- **`Book`** `@Model` class: title, author, genre, review, rating.
+- **`Book`** `@Model` class: title, author, genre, review, rating, **`date`** (defaults to creation time).
 - **`BookwormApp`**: `modelContainer(for: Book.self)` for on-disk persistence.
-- **`ContentView`**: `NavigationStack`, `@Query` sorted by title then author, list rows with **`EmojiRatingView`** and navigation to detail; swipe-to-delete; **Edit** mode; sheet to add a book.
-- **`AddBookView`**: form with text fields, genre picker, **`TextEditor`** for review, **`RatingView`** (tap stars), inserts new `Book` into the model context.
-- **`DetailView`**: genre hero image from asset catalog, author and review, read-only star rating, toolbar delete with confirmation **`alert`**.
+- **`ContentView`**: `NavigationStack`, `@Query` sorted by title then author, list rows with **`EmojiRatingView`** and navigation to detail; **1-star titles** use red foreground for quick scanning; swipe-to-delete; **Edit** mode; sheet to add a book.
+- **`AddBookView`**: form with text fields, genre picker, **`TextEditor`** for review, **`RatingView`** (tap stars); **Add book** stays disabled until fields are non-empty, meet minimum length, and a rating is chosen; inserts new `Book` into the model context.
+- **`DetailView`**: genre hero image from asset catalog, **formatted date added**, author and review, read-only star rating, toolbar delete with confirmation **`alert`**.
 - **Genre images**: bundled assets for Fantasy, Horror, Kids, Mystery, Poetry, Romance, Thriller (match picker strings).
 
 ## Project layout
