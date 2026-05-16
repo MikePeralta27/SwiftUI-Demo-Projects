@@ -1,13 +1,19 @@
 # iExpense
 
-A SwiftUI **expense tracker** with three categories—**Personal**, **Business**, and **Other**. Add items from a sheet, see amounts with **color styling** by size (green under 10, orange under 100, red otherwise), swipe to delete within each section, and keep data across launches with **JSON in `UserDefaults`**.
+SwiftUI **expense tracker** with three categories—**Personal**, **Business**, and **Other**. Data is stored with **SwiftData** (`@Model`, `@Query`, `modelContext`). Add expenses via **navigation** to a form, use **Edit** and swipe to **delete** within each section, and choose **sort by name or amount** from the toolbar.
 
-Uses the **Observation** framework (`@Observable` on `Expenses`), `NavigationStack`, grouped `List` sections, and a currency-formatted amount field on the add form.
+## Features
+
+- **`ExpenseItem`** `@Model`: name, type, amount, stable `id`.
+- **`iExpenseApp`**: `modelContainer(for: ExpenseItem.self)`.
+- **`ContentView`**: `NavigationStack` with three **`ExpensesSection`** views (filtered with `#Predicate`), a **Sort** menu driving shared **`SortDescriptor`s**, **Add** pushes **`AddView`**, and **Edit** for list editing.
+- **`ExpensesSection`**: `@Query` filtered by `type`, `ForEach` rows, **`onDelete`** with **`modelContext.delete`** wrapped in **`withAnimation`**.
+- **`AddView`**: type picker, currency **`TextField`**, **`modelContext.insert`**, dismiss on save.
 
 ## Requirements
 
-- Xcode 15+ with Swift 5.9+ (SwiftUI)
-- iOS version as set in the Xcode project (typically **iOS 17+** for `@Observable`)
+- **Xcode 15+** with Swift **5.9+**
+- **iOS 17+** (or the project deployment target) for **SwiftData**
 
 ## Open in Xcode
 
@@ -16,4 +22,4 @@ Uses the **Observation** framework (`@Observable` on `Expenses`), `NavigationSta
 
 ## Learn more
 
-Follows the common **iExpense** pattern: a codable model, an observable store with `didSet` persistence, toolbar add/edit actions, and sectioned filtering by expense type.
+Patterns: **SwiftData** persistence, **`#Predicate`** with `@Query`, **`NavigationStack`** and `navigationDestination`, toolbar **sort** and **edit**, and **`modelContext`** insert/delete.
