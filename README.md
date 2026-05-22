@@ -19,6 +19,7 @@ A monorepo of small **SwiftUI** sample apps—each folder is a standalone Xcode 
 | [**habit-tracker**](habit-tracker/) | Habit list: add habits from a sheet, list with typed navigation by `UUID`, detail with completion count and JSON persistence in `UserDefaults`. |
 | [**CupcakeCorner**](CupcakeCorner/) | Cupcake order flow: picker, stepper, special requests, delivery form with validation, JSON `UserDefaults` persistence for address, checkout with `AsyncImage`, currency total, and async POST with `Codable` `Order`. |
 | [**Bookworm**](Bookworm/) | Reading log: SwiftData `@Model` books, sorted list with emoji ratings, add form with stars and review, detail with genre art, swipe delete and confirmation. |
+| [**FriendFace**](FriendFace/) | Social directory: fetch HWS sample users once, persist with **SwiftData**, sorted list, detail with profile and friends. |
 
 ## Repository layout
 
@@ -64,6 +65,9 @@ SwiftUI-Demo-Projects/
 ├── Bookworm/
 │   ├── README.md
 │   └── Bookworm.xcodeproj
+├── FriendFace/
+│   ├── README.md
+│   └── FriendFace.xcodeproj
 └── …                         ← More demos added over time
 ```
 
