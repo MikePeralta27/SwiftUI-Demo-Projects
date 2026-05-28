@@ -20,6 +20,7 @@ A monorepo of small **SwiftUI** sample apps—each folder is a standalone Xcode 
 | [**CupcakeCorner**](CupcakeCorner/) | Cupcake order flow: picker, stepper, special requests, delivery form with validation, JSON `UserDefaults` persistence for address, checkout with `AsyncImage`, currency total, and async POST with `Codable` `Order`. |
 | [**Bookworm**](Bookworm/) | Reading log: SwiftData `@Model` books, sorted list with emoji ratings, add form with stars and review, detail with genre art, swipe delete and confirmation. |
 | [**Instafilter**](Instafilter/) | Photo filters: **PhotosPicker** import, **Core Image** effects with intensity/radius/scale sliders, filter picker dialog, **ShareLink**, and review prompt via **`@AppStorage`**. |
+| [**BucketList**](BucketList/) | Map bucket list: tap-to-add pins, double-tap to edit, **Face ID** unlock, map style picker, JSON persistence with file protection, and Wikipedia nearby places in the edit sheet. |
 
 ## Repository layout
 
@@ -68,6 +69,9 @@ SwiftUI-Demo-Projects/
 ├── Instafilter/
 │   ├── README.md
 │   └── Instafilter.xcodeproj
+├── BucketList/
+│   ├── README.md
+│   └── BucketList.xcodeproj
 └── …                         ← More demos added over time
 ```
 
