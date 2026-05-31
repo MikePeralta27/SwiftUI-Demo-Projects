@@ -8,6 +8,7 @@ SwiftUI **reading log** demo from **100 Days of SwiftUI**: track books with titl
 - **`BookwormApp`**: `modelContainer(for: Book.self)` for on-disk persistence.
 - **`ContentView`**: `NavigationStack`, `@Query` sorted by title then author, list rows with **`EmojiRatingView`** and navigation to detail; **1-star titles** use red foreground for quick scanning; swipe-to-delete; **Edit** mode; sheet to add a book.
 - **`AddBookView`**: form with text fields, genre picker, **`TextEditor`** for review, **`RatingView`** (tap stars); **Add book** stays disabled until fields are non-empty, meet minimum length, and a rating is chosen; inserts new `Book` into the model context.
+- **`RatingView` accessibility**: combined star control with **`accessibilityLabel`**, **`accessibilityValue`**, and **`accessibilityAdjustableAction`** for VoiceOver.
 - **`DetailView`**: genre hero image from asset catalog, **formatted date added**, author and review, read-only star rating, toolbar delete with confirmation **`alert`**.
 - **Genre images**: bundled assets for Fantasy, Horror, Kids, Mystery, Poetry, Romance, Thriller (match picker strings).
 

@@ -4,6 +4,8 @@ A SwiftUI **anagram** game: the app picks a random **root word** from `start.txt
 
 Uses `NavigationStack`, `List`, `TextField` with `onSubmit`, `UITextChecker` for English spell-checking, and alerts for validation errors (duplicate, impossible letters, unknown word, too short, same as root word).
 
+Each used-word row uses **`accessibilityElement`**, **`accessibilityLabel`**, and **`accessibilityHint`** so VoiceOver reads the word and its letter count clearly.
+
 ## Requirements
 
 - Xcode 15+ (SwiftUI)
