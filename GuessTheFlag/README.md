@@ -16,7 +16,7 @@ A **SwiftUI** quiz game in the style of *100 Days of SwiftUI* / Paul Hudson’s 
 ## Notes
 
 - Wrong answers do not decrease the score (tutorial-style behavior).
-- **Accessibility:** For a production app you’d add accessibility labels on flag buttons and consider `VoiceOver` hints.
+- **Accessibility:** Flag buttons use **`accessibilityLabel`** with descriptive text for each country’s flag layout (VoiceOver-friendly quiz answers).
 
 ## Requirements
 
