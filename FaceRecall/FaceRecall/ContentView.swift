@@ -12,11 +12,11 @@ import SwiftUI
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
 
-    @State private var processedImage: Image?
     @State private var selectedItem: PhotosPickerItem?
     @State private var pendingPhotoData: Data?
     @State private var nameInput = ""
     @State private var showingNameAlert = false
+    @State private var locationFetcher = LocationFetcher()
 
     @Query(sort: \NamedPhoto.name) private var photos: [NamedPhoto]
 
@@ -54,17 +54,17 @@ struct ContentView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     PhotosPicker(selection: $selectedItem) {
                         Label("Select an image", systemImage: "plus")
-
                     }
-
                 }  // ToolbarItem
             }  // Toolbar
             .navigationTitle("Face Recall")
+            .onAppear {
+                locationFetcher.start()
+            }
             .onChange(of: selectedItem, initial: false) {
                 Task {
                     guard let newValue = selectedItem else { return }
-                    guard
-                        let data = try await newValue.loadTransferable(
+                    guard let data = try await newValue.loadTransferable(
                             type: Data.self
                         )
                     else { return }
@@ -85,14 +85,20 @@ struct ContentView: View {
                 let trimmed = nameInput.trimmingCharacters(
                     in: .whitespacesAndNewlines
                 )
+                
                 guard trimmed.isEmpty == false else { return }
 
-                let photo = NamedPhoto(name: trimmed, photoData: data)
+                let photo = NamedPhoto(
+                    name: trimmed,
+                    photoData: data,
+                    location: locationFetcher.lastKnownLocation
+                )
                 modelContext.insert(photo)
                 try? modelContext.save()
 
                 pendingPhotoData = nil
                 nameInput = ""
+                
             }
 
             Button("Cancel", role: .cancel) {
@@ -109,3 +115,4 @@ struct ContentView: View {
     ContentView()
         .modelContainer(for: NamedPhoto.self, inMemory: true)  // doesn't persist
 }
+
