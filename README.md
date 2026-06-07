@@ -22,6 +22,7 @@ A monorepo of small **SwiftUI** sample apps—each folder is a standalone Xcode 
 | [**Instafilter**](Instafilter/) | Photo filters: **PhotosPicker** import, **Core Image** effects with intensity/radius/scale sliders, filter picker dialog, **ShareLink**, and review prompt via **`@AppStorage`**. |
 | [**BucketList**](BucketList/) | Map bucket list: tap-to-add pins, double-tap to edit, **Face ID** unlock, map style picker, JSON persistence with file protection, and Wikipedia nearby places in the edit sheet. |
 | [**AccessibilitySandbox**](AccessibilitySandbox/) | Accessibility lab: VoiceOver labels, hidden decorative images, adjustable actions, and combined accessibility elements. |
+| [**FaceRecall**](FaceRecall/) | Conference contacts: **PhotosPicker** import, immediate naming alert, SwiftData persistence, sorted list, detail view with **MapKit** pin, optional **Core Location** at save time, and swipe delete. |
 
 ## Repository layout
 
@@ -76,6 +77,9 @@ SwiftUI-Demo-Projects/
 ├── AccessibilitySandbox/
 │   ├── README.md
 │   └── AccessibilitySandbox.xcodeproj
+├── FaceRecall/
+│   ├── README.md
+│   └── FaceRecall.xcodeproj
 └── …                         ← More demos added over time
 ```
 
