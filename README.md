@@ -23,6 +23,7 @@ A monorepo of small **SwiftUI** sample apps—each folder is a standalone Xcode 
 | [**BucketList**](BucketList/) | Map bucket list: tap-to-add pins, double-tap to edit, **Face ID** unlock, map style picker, JSON persistence with file protection, and Wikipedia nearby places in the edit sheet. |
 | [**AccessibilitySandbox**](AccessibilitySandbox/) | Accessibility lab: VoiceOver labels, hidden decorative images, adjustable actions, and combined accessibility elements. |
 | [**FaceRecall**](FaceRecall/) | Conference contacts: **PhotosPicker** import, immediate naming alert, SwiftData persistence, sorted list, detail view with **MapKit** pin, optional **Core Location** at save time, and swipe delete. |
+| [**HotProspects**](HotProspects/) | Conference networking: **QR scan** to save contacts, SwiftData tabs (everyone/contacted/uncontacted), edit form, sort menu, swipe actions, local notifications, bulk delete, and **Me** tab with QR generation and **ShareLink**. |
 
 ## Repository layout
 
@@ -80,6 +81,9 @@ SwiftUI-Demo-Projects/
 ├── FaceRecall/
 │   ├── README.md
 │   └── FaceRecall.xcodeproj
+├── HotProspects/
+│   ├── README.md
+│   └── HotProspects.xcodeproj
 └── …                         ← More demos added over time
 ```
 
