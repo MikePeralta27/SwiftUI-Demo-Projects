@@ -24,6 +24,7 @@ A monorepo of small **SwiftUI** sample apps—each folder is a standalone Xcode 
 | [**AccessibilitySandbox**](AccessibilitySandbox/) | Accessibility lab: VoiceOver labels, hidden decorative images, adjustable actions, and combined accessibility elements. |
 | [**FaceRecall**](FaceRecall/) | Conference contacts: **PhotosPicker** import, immediate naming alert, SwiftData persistence, sorted list, detail view with **MapKit** pin, optional **Core Location** at save time, and swipe delete. |
 | [**HotProspects**](HotProspects/) | Conference networking: **QR scan** to save contacts, SwiftData tabs (everyone/contacted/uncontacted), edit form, sort menu, swipe actions, local notifications, bulk delete, and **Me** tab with QR generation and **ShareLink**. |
+| [**Flashzilla**](Flashzilla/) | Flashcard quiz: stacked deck, tap-to-reveal, swipe correct/wrong with color feedback, 100s timer, wrong cards return to the deck, edit sheet, accessibility buttons, and **SwiftData** persistence. |
 
 ## Repository layout
 
@@ -84,6 +85,9 @@ SwiftUI-Demo-Projects/
 ├── HotProspects/
 │   ├── README.md
 │   └── HotProspects.xcodeproj
+├── Flashzilla/
+│   ├── README.md
+│   └── Flashzilla.xcodeproj
 └── …                         ← More demos added over time
 ```
 
