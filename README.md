@@ -26,6 +26,7 @@ A monorepo of small **SwiftUI** sample apps—each folder is a standalone Xcode 
 | [**HotProspects**](HotProspects/) | Conference networking: **QR scan** to save contacts, SwiftData tabs (everyone/contacted/uncontacted), edit form, sort menu, swipe actions, local notifications, bulk delete, and **Me** tab with QR generation and **ShareLink**. |
 | [**Flashzilla**](Flashzilla/) | Flashcard quiz: stacked deck, tap-to-reveal, swipe correct/wrong with color feedback, 100s timer, wrong cards return to the deck, edit sheet, accessibility buttons, and **SwiftData** persistence. |
 | [**LayoutAndGeometry**](LayoutAndGeometry/) | Scroll effects lab: nested **GeometryReader**, named coordinate space, top fade, position-based scale (50%–100%), hue-driven `Color(hue:saturation:brightness:)`, and **3D rotation** on scroll. |
+| [**Dicey**](Dicey/) | Dice roller: customize count (1–10) and type (D4–D100), flicker animation, total, haptics, **SwiftData** roll history, **LazyVGrid** layout (5 per row), and VoiceOver support. |
 
 ## Repository layout
 
@@ -92,6 +93,9 @@ SwiftUI-Demo-Projects/
 ├── LayoutAndGeometry/
 │   ├── README.md
 │   └── LayoutAndGeometry.xcodeproj
+├── Dicey/
+│   ├── README.md
+│   └── Dicey.xcodeproj
 └── …                         ← More demos added over time
 ```
 
